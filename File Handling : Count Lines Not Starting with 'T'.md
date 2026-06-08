@@ -13,17 +13,31 @@ To write a Python program that counts the number of lines in a text file `story.
 
 ## 🧾 Program
 ```
-count = 0
-with open("story.txt", "r") as file:
-    for line in file:
-        if line.strip() and not line.lstrip().startswith('T'):
-            count += 1
-print("Sum :", count)
+
+def create_file(file_path, content):
+    with open(file_path, 'w') as file:
+        file.write(content)
+
+
+def merge_files(file1_path, file2_path, output_file_path):
+    f1=open(file1_path,"r")
+    f2=open(file2_path,"r")
+    f3=open(output_file_path,"w")
+    f3.write(f1.read())
+    f3.write(f2.read())
+    
+
+
+def read_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
+
 ```
 
 ## Output
 
-<img width="712" height="286" alt="568242555-5fed6921-1a9b-4dcd-a7bd-7c3ca8d5416a" src="https://github.com/user-attachments/assets/64b078b2-2549-45d0-8e0b-0b3d16e982f3" />
+<img width="891" height="397" alt="568127807-33d0f5bf-d853-44fa-8e5b-8f9a34450c03" src="https://github.com/user-attachments/assets/59e8b3f3-00b2-46a6-89bc-f00bf5050b42" />
+
 
 ## Result
 Thus, the program to merge two files into a third file using File Handling in Python was executed successfully
